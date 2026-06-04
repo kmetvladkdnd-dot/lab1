@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="uk">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Заявка в техпідтримку (Варіант 9)</title>
+    <link rel="stylesheet" href="style.css" />
+    <script type="module" src="/src/main.ts" defer></script>
+</head>
+<body>
+    <h1>Сервіс «Заявка в техпідтримку»</h1>
+    <main class="container">
+        <section class="form-section">
+            <h2>Додати/Редагувати заявку</h2>
+            <form id="createForm">
+                <div class="field">
+                    <label for="subjectInput">Тема (Subject)</label>
+                    <input id="subjectInput" type="text" />
+                    <p class="error-text" id="subjectError"></p>
+                </div>
+                <div class="field">
+                    <label for="statusSelect">Статус (Status)</label>
+                    <select id="statusSelect">
+                        <option value="">Оберіть статус</option>
+                        <option value="New">New</option>
+                        <option value="In Progress">In Progress</option>
+                        <option value="Closed">Closed</option>
+                    </select>
+                    <p class="error-text" id="statusError"></p>
+                </div>
+                <div class="field">
+                    <label for="prioritySelect">Пріоритет (Priority)</label>
+                    <select id="prioritySelect">
+                        <option value="">Оберіть пріоритет</option>
+                        <option value="Low">Low</option>
+                        <option value="Medium">Medium</option>
+                        <option value="High">High</option>
+                    </select>
+                    <p class="error-text" id="priorityError"></p>
+                </div>
+                <div class="field">
+                    <label for="messageInput">Повідомлення (Message)</label>
+                    <textarea id="messageInput" rows="4"></textarea>
+                    <p class="error-text" id="messageError"></p>
+                </div>
+                <div class="field">
+                    <label for="authorInput">Автор (Author)</label>
+                    <input id="authorInput" type="text" />
+                    <p class="error-text" id="authorError"></p>
+                </div>
+                <div class="buttons">
+                    <button type="submit">Зберегти</button>
+                    <button type="button" id="resetBtn">Очистити</button>
+                </div>
+            </form>
+        </section>
+      
+        <section class="list-section">
+            <h2>Список заявок</h2>
+            <div class="controls">
+                <input type="text" id="searchInput" placeholder="Пошук за темою..." />
+                <select id="sortSelect">
+                    <option value="none">Сортування: За датою</option>
+                    <option value="priority">Сортування: За пріоритетом</option>
+                </select>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Тема</th>
+                        <th>Статус</th>
+                        <th>Пріоритет</th>
+                        <th>Автор</th>
+                        <th>Дії</th>
+                    </tr>
+                </thead>
+                <tbody id="itemsTableBody">
+                </tbody>
+            </table>
+        </section>
+    </main>
+</body>
+</html>
